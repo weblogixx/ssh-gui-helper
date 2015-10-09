@@ -1,0 +1,99 @@
+.connectionview-component {
+  padding: 30px 0;
+}
+
+.connectionview-component header {
+  margin-bottom: 10px;
+}
+
+.connection-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 15px;
+  font-size: 18px;
+  line-height: 40px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  background: #c0c0c0;
+  border-radius: 30px;
+  float: left;
+}
+
+.connectionview-component header {
+  padding: 0 25px 0 80px;
+}
+
+.connectionview-component h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 25px;
+  line-height: 36px;
+  font-weight: 400;
+}
+.connectionview-component h3 small {
+  margin-top: -12px;
+  font-size: 12px;
+  display: block;
+}
+
+.connection-data {
+  margin: 0 25px;
+  font-size: 13px;
+}
+
+.connection-data tr {
+  border-top: 1px solid #e6e6e6;
+}
+
+.connection-data tr:first-child {
+  border-top: none;
+}
+
+.connection-data th,
+.connection-data td {
+  padding: 7px 7px;
+  vertical-align: top;
+}
+
+.connection-data th {
+  padding-left: 70px;
+  text-align: left;
+  font-weight: normal;
+  white-space: nowrap;
+  color: #808080;
+}
+
+.connection-data td {
+  width: 100%;
+}
+
+/* Inputs */
+.connectionview-component h3 input {
+  width: 440px;
+}
+
+.connection-data input {
+  width: 355px;
+}
+
+.connectionview-component input:focus {
+  outline: none;
+}
+
+.connectionview-component input {
+  border: 1px solid transparent;
+  border-radius: 2px;
+}
+
+.connectionview-component input:focus,
+.connectionview-component input:active,
+.connectionview-component input:hover {
+  border: 1px solid #bfbfbf;
+}
+
+.connectionview-component input[readonly]:focus,
+.connectionview-component input[readonly]:active,
+.connectionview-component input[readonly]:hover {
+  border-color: transparent;
+}

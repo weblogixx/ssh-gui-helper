@@ -1,0 +1,53 @@
+.footer-component {
+  padding: 0 25px 10px;
+}
+
+.footer-component button {
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.footer-component button:active,
+.footer-component button:focus {
+  outline: none;
+}
+
+.footer-component button span {
+  padding: 2px 8px;
+  border: 1px solid #dadada;
+  border-radius: 6px;
+  color: #262626;
+  font-size: 14px;
+  display: inline-block;
+}
+
+.footer-component .icon-btn span {
+  padding: 2px 12px;
+  font-family: Courier;
+  font-size: 20px;
+  line-height: 16px;
+}
+
+.footer-component .btn-add {
+  float: left;
+}
+
+.footer-component .btn-edit {
+  float: right;
+}
+.footer-component .btn-edit span {
+  width: 86px;
+  text-align: center;
+}
+.footer-component .btn-edit.active span {
+  color: #2D8EFB;
+}
+
+.footer-component .btn-delete {
+  margin-right: 5px;
+  float: right;
+}
+.footer-component .btn-delete span {
+  color: #900;
+}

@@ -1,0 +1,26 @@
+.search-component {
+  padding: 25px 5px 5px;
+  text-align: center;
+}
+
+.search-component input {
+  width: 150px;
+  padding: 5px 20px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #E1E1E1;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.search-component input:focus {
+  outline: none;
+}
+
+.search-component input:focus {
+  width: 180px;
+  padding: 5px 5px;
+  transition: all 0.3s ease;
+  text-align: left;
+}

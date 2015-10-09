@@ -1,0 +1,33 @@
+.layout2column-component {
+  height: 100%;
+  min-height: 100vh;
+  flex-direction: row;
+  display: flex;
+}
+
+.layout2column-component .content-left,
+.layout2column-component .content-right {
+  height: 100%;
+  margin: 0 auto;
+}
+
+.layout2column-component .content-left {
+  width: 250px;
+  border-right: 1px solid #D5D5D5;
+  background: #f6f6f6;
+}
+
+.layout2column-component .content-right {
+  width: 100%;
+  display: flex;
+}
+
+.layout2column-component .content-right > div {
+  width: 100%;
+  flex-direction: column;
+  display: flex;
+}
+
+.layout2column-component .connectionview-component {
+  flex: 1;
+}

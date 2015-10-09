@@ -1,0 +1,12 @@
+.connectionlistitem-component {
+  padding: 4px 20px 4px 40px;
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: default;
+}
+
+.connectionlistitem-component.active {
+  color: #fff;
+  background: #0065D5;
+}

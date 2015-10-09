@@ -1,0 +1,28 @@
+/* Base Application Styles */
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: -apple-system, "San Francisco", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: #fff;
+}
+
+#app {
+  height: 100%;
+}
+
+/* Clearfix and helpers */
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+
+.cf:after {
+    clear: both;
+}
+
+.hidden {
+  display: none;
+}
