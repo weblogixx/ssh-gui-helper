@@ -33,9 +33,15 @@
   float: left;
 }
 
-.footer-component .btn-edit {
+.footer-component .btn-edit,
+.footer-component .btn-open {
   float: right;
 }
+
+.footer-component .btn-open {
+  margin-left: 5px;
+}
+
 .footer-component .btn-edit span {
   width: 86px;
   text-align: center;

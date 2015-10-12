@@ -1,3 +1,4 @@
+/*global ipc*/
 import alt from 'components/Dispatcher';
 import ConnectionActions from 'actions/ConnectionActions';
 
@@ -12,11 +13,29 @@ export class ConnectionStore {
     this.connections = [];
     this.editMode = false;
 
+    // Get data from the main process if available
+    ipc.on('store-data', (items) => {
+
+      if(!items || !items.length) {
+        return;
+      }
+
+      this.connections = items.map((item) => {
+
+        var newItem = item;
+        newItem.connection = SSHConnection.fromObject(item.connection);
+        return newItem;
+      });
+
+      this.emitChange();
+    });
+
     this.bindListeners({
       handleActivateConnection: ConnectionActions.ACTIVATE,
       handleAddConnection: ConnectionActions.ADD,
       handleEditConnection: ConnectionActions.EDIT,
       handleRemoveConnection: ConnectionActions.REMOVE,
+      handleOpenConnection: ConnectionActions.OPEN,
       handleToggleEditConnection: ConnectionActions.TOGGLE_EDIT,
       handleSearchConnection: ConnectionActions.SEARCH
     });
@@ -28,6 +47,7 @@ export class ConnectionStore {
    */
   handleActivateConnection(connection) {
     this.getInstance().setActiveConnection(connection);
+    ipc.send('save-command', this.connections);
   }
 
   /**
@@ -49,6 +69,8 @@ export class ConnectionStore {
 
     // Make sure we always use edit mode after adding new connections
     this.editMode = true;
+
+    ipc.send('save-command', this.connections);
   }
 
   /**
@@ -64,6 +86,7 @@ export class ConnectionStore {
     }
 
     this.connections[index].connection[field] = value;
+    ipc.send('save-command', this.connections);
   }
 
   /**
@@ -79,6 +102,7 @@ export class ConnectionStore {
     }
 
     this.connections.splice(index, 1);
+    ipc.send('save-command', this.connections);
   }
 
   /**
@@ -97,6 +121,17 @@ export class ConnectionStore {
     this.connections.map((item) => {
       item.visible = item.connection.connectionName.toLowerCase().startsWith(key.toLowerCase());
     });
+  }
+
+  /**
+   * Open the active item
+   */
+  handleOpenConnection() {
+
+    let connection = this.getInstance().getActiveConnection();
+    if(connection) {
+      ipc.send('open-command', connection);
+    }
   }
 
   /**

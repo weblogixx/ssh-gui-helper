@@ -24,6 +24,10 @@ class FooterComponent extends React.Component {
     ConnectionActions.remove();
   }
 
+  handleOpen() {
+    ConnectionActions.open();
+  }
+
   render() {
 
     let editContent = this.props.editMode ? 'Ready' : 'Edit';
@@ -38,9 +42,15 @@ class FooterComponent extends React.Component {
       { hidden: !this.props.allowEdit || !this.props.editMode }
     );
 
+    let openClass = classnames(
+      'btn-open',
+      { hidden: !this.props.allowEdit || this.props.editMode }
+    );
+
     return (
       <footer className="footer-component cf">
         <button className="btn-add icon-btn" onClick={this.handleClick.bind(this)}><span>+</span></button>
+        <button className={openClass} onClick={this.handleOpen.bind(this)}><span>Open</span></button>
         <button className={editClass} onClick={this.handleEdit.bind(this)}><span>{editContent}</span></button>
         <button className={deleteClass} onClick={this.handleDelete.bind(this)}><span>Delete</span></button>
       </footer>

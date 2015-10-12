@@ -1,3 +1,4 @@
+/*global clipboard*/
 'use strict';
 
 import React from 'react/addons';
@@ -19,6 +20,10 @@ class ConnectionViewComponent extends React.Component {
       value: e.target.value,
       connection: this.props.item
     });
+  }
+
+  copyCommand() {
+    clipboard.writeText(this.props.item.connection.getCommand('darwin'));
   }
 
   render() {
@@ -92,7 +97,7 @@ class ConnectionViewComponent extends React.Component {
             </tr>
             <tr>
               <th>Connection String:</th>
-              <td>{connection.getCommand('darwin')}</td>
+              <td onClick={this.copyCommand.bind(this)}>{connection.getCommand('darwin')}</td>
             </tr>
           </tbody>
         </table>

@@ -14,6 +14,10 @@ class ConnectionActions {
     this.dispatch();
   }
 
+  open() {
+    this.dispatch();
+  }
+
   toggleEdit() {
     this.dispatch();
   }
